@@ -36,8 +36,15 @@ Once this folder is the main directory within command line or terminal. You can 
 Run with "python ./model.py" 
 ```
 
-This will run the program, which must be activated using the model GUI at the top of your screen, if this does not run auto
+This will run the program, which must be activated using the model GUI at the top of your screen, if this does not run automatically.
 
+The model will create two outputs detailed within the python comments. Two example outputs have been given in the above repository.
+
+```
+dataout - which is the new environment created
+
+datatotal - which is the total collected by the agents
+```
 
 ## Built With
 
