@@ -5,6 +5,7 @@ Created on Mon Oct 30 14:43:53 2017
 
 @author: wotsit2000
 """
+#This python file is the framework behind model.py created within the practicals.
 
 import random
 

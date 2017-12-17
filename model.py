@@ -4,16 +4,17 @@ Created on Mon Oct  9 12:17:48 2017
 
 @author: gy17rac
 """
+
+#The following code is the model created within the practicals.
+#This can be ran within a python simulator or within command line with "python ./model.py"
+
 import matplotlib
 matplotlib.use('TkAgg')
 
-import random
-import operator
 import matplotlib.pyplot
 import matplotlib.animation 
 import agentframework
 import csv
-import sys
 import tkinter
 import matplotlib.backends.backend_tkagg
 import requests
@@ -26,13 +27,6 @@ soup = bs4.BeautifulSoup(content, 'html.parser')
 td_ys = soup.find_all(attrs={"class" : "y"})
 td_xs = soup.find_all(attrs={"class" : "x"})
 
-"""import sys
-
-print ('Argument Lists', str(sys.argv))
-
-num_of_agents = int(sys.argv[1])
-num_of_iterations = int(sys.argv[2])
-neighbourhood = int(sys.argv[3])"""
 
 """This creates the variables that the model will be built upon
 Number of agents relates to the number of sheep.
@@ -117,13 +111,6 @@ def gen_function(b = [0]):
         yield a			# Returns control and waits next call.
         a = a + 1
 
-"""matplotlib.pyplot.xlim(0, 99)
-matplotlib.pyplot.ylim(0, 99)
-matplotlib.pyplot.imshow(environment)
-
-for i in range(num_of_agents):
-    matplotlib.pyplot.scatter(agents[i].x,agents[i].y)  """
-
 
 """This next bit is the plotting of the animation of the scatter"""
 #animation = matplotlib.animation.FuncAnimation(fig, update, interval=1, repeat=False, frames=num_of_iterations)
@@ -145,7 +132,7 @@ model_menu.add_command(label="Run model", command=run)
 
 
 """The following code writes the outputs from the model to two files. 
-The first file writes the environment. 
+The first file writes the environment. In terms of where the agents have collected the environment.
 The second file writes the total amount that the agents gather to one file."""
 f2 = open('dataout.csv', 'w', newline='') 
 writer = csv.writer(f2, delimiter=',')
@@ -153,7 +140,7 @@ for row in environment:
 	writer.writerow(row)		# List of values.
 f2.close()
 
-f3 = open('datanew.csv', 'a', newline='')
+f3 = open('datatotal.csv', 'a', newline='')
 writer = csv.writer(f3, delimiter=',')
 a = []
 for i in range(num_of_agents):
@@ -167,14 +154,14 @@ f3.close()
 tkinter.mainloop()
 
 
-#Lecturers code to show how this could be simplified with Python.
-"""
-s = 0
-for agent in agents:
-    s += agent.store
-print(s)"""
 
-"""for agent0 in agents:
-    for agent1 in agents:
-        distance = distance_between(agent0, agent1)"""
+#Future Developments - the following code could be used alongside a sweeper file to make the model more user friendly. This code is not used here but is an example of future work.
+"""import sys
+
+print ('Argument Lists', str(sys.argv))
+
+num_of_agents = int(sys.argv[1])
+num_of_iterations = int(sys.argv[2])
+neighbourhood = int(sys.argv[3])"""
+
 
